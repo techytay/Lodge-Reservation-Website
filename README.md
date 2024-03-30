@@ -5,7 +5,7 @@
 * CSS
 * MySQL
 * Node.js
-### Contributors
+### Contributors:
 * Taylor Niemann
 * Ricardo Orlando
 * Renante Labrador
