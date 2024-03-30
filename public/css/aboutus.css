@@ -1,0 +1,136 @@
+#about-container {
+    font-family: Arial, Helvetica, sans-serif, serif;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#d6e7f1;
+    padding: 30px 30px;
+    margin: 5px 300px;
+    border-radius: 5px;
+}
+
+.image > img{
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+	box-shadow: 5px 5px 3px grey;
+}
+
+.image_staff > img{
+    margin-left: 50px; 
+    border-radius: 10px;
+    width: 75%;
+    object-fit: cover;
+    border-radius: 10px;
+	box-shadow: 5px 5px 3px grey;
+}
+
+.text-aboutus {
+    background-color: #769FCD;
+    box-shadow: 5px 5px 2px grey;
+    padding: 5px 5px;
+    margin: 20px 200px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.text-contactus {
+    background-color: #769FCD;
+    padding: 5px 5px;
+    margin: 20px 200px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.text-emailus{
+    font-size: large;
+  }
+
+h2 {
+    background-color: #769FCD;
+    text-align: center;
+    padding: 20px 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+
+h4  {
+    background-color: #769FCD;
+    text-align: center;
+    padding: 20px 20px;
+    /* margin-top: 5px; */
+    margin: 20px 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.waterview img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.col h3 {
+    font-weight: bold;
+}
+
+.col p {
+    font-size:larger;
+}
+#friendlyStaff-container h1 {
+    text-align: center;
+    background-color: #F9D5A7;
+}
+
+
+#information-container {
+    background-color: #F9D5A7;
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px grey;
+}
+
+#position-container {
+    margin-top: 5px;
+    margin-left: 50px;
+    background-color: #F9D5A7;
+    border-radius: 10px;
+    width: 75%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px grey;
+}
+
+#contact-container p {
+    font-size: large;
+    margin-top: 5px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    border-style:outset;
+    border-radius: 10px;
+}
+
+#popup-window {
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    background-color: #F9D5A7;
+    border:1x solid black;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}

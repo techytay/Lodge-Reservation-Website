@@ -1,0 +1,113 @@
+body{
+    background-color: #F7FBFC;
+    height: 1200px;
+
+}
+
+#booking-container {
+    margin-top: 5px;
+    padding: 45px 45px;
+    margin: 10px 300px;
+    background-color: #D6E6F2;
+    border-radius: 5px;
+    border: 1px solid #1A3263;
+    padding: 5px;
+    margin-top: 25px;
+    margin: bottom 10px; 
+    box-shadow: 5px 5px 2px grey;
+}
+
+.textcenter {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.text-roomoptions{
+    background-color: #769FCD;
+    box-shadow: 5px 5px 2px grey;
+    padding: 5px 5px;
+    margin: 10px 200px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+h1 {
+    background-color: #769FCD;
+    
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%
+}
+
+h2 {
+    color: #1A3263;
+    font-weight: bold;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    padding: 45px 45px;
+    margin: 10px 385px;
+    background-color: #1A3263;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+}
+
+.image img{
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+	box-shadow: 5px 5px 3px grey;
+}
+
+
+
+.col-sm-auto {
+    padding: 30px;
+}
+.btn-default {
+    background-color: white;
+    border: none;
+}
+.btn-default:hover {
+    background-color: #769FCD;
+    color: white;
+}
+.btn-primary {
+    margin-top: 32px;
+    background-color: #1A3263;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.col-lg-7 {
+    background-color: #f9d5a7;
+    padding: 2%;
+    max-height: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+	box-shadow: 5px 5px 3px grey;
+}
+#input-group {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+figcaption {
+    margin-top: 3px;
+    font-style: italic;
+    font-size: .75em;
+    color: rgba(224,156,127,0.79);
+}

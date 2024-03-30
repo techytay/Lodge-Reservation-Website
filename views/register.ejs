@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" type="/image/x-icon" href="./images/MBL_icon.png">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<%- include('partials/navbar') %>
+<body>
+    <div class="container mainBox">
+        <div class="row align-items-center">
+          <div class="col">
+          </div>
+          <div class="col formBox">
+            <h2>Register</h2><hr>
+            <p class="text-optional">All fields are required unless marked optional.</p>
+            <form action="/auth/register" method="post">
+                <div class="mb-2">
+                    <label for="firstName" class="form-label" style="font-weight: bolder; font-size: large;">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                  </div>
+                <div class="mb-2">
+                    <label for="lastName" class="form-label" style="font-weight: bolder; font-size: large;">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="phone" class="form-label" style="font-weight: bolder; font-size: large;">
+                      Phone Number
+                      <a href="#" title="Enter Phone Number. Thanks!"><img src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="20px"/></a>
+                  </label>
+                  <input type="tel" class="form-control" id="phone" name="phone" 
+                        pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" required 
+                        title="Phone number must be in the format: (123) 456-7890" 
+                        placeholder="(123) 456-7890">
+                  
+                  
+                  </div>
+                  
+                <div class="mb-2">
+                  <label for="exampleInputEmail1" class="form-label" style="font-weight: bolder; font-size: large;">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" required>
+                  <div class="errMessage">
+                  <% if (errorMessages && errorMessages.length > 0) { %>
+                      <% errorMessages.forEach(function(message) { %>
+                          <div class="alert alert-danger"><%= message %></div>
+                      <% }); %>
+                  <% } %>
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <label for="exampleInputPassword1" class="form-label"style="font-weight: bolder; font-size: large;">Password</label>
+                  <a href="#" title="Minimum of 8 characters,the password must have at least 1 Uppercase, lowercase, a number (0-9), and special character (e.g., @, #, $, %, &, *, etc.). Thanks!"><img src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="20px"/></a>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                  <datalist id="mylist">
+                    <option value="Option 1">
+                    <option value="Option 2">
+                    <option value="Option 3">
+                 </datalist>
+                  
+                </div>
+                <div class="mb-2">
+                  <label for="exampleInputPasswordConfirmation" class="form-label" style="font-weight: bolder; font-size: large;">Confirm Password</label>
+                  <input type="password" class="form-control" id="exampleInputPasswordConfirmation" name="passwordConfirmation" required>
+                  <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+                </div>
+                <div class="mb-2 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="serviceAgreed" required>
+                  <label class="form-check-label" for="exampleCheck1">Terms Services Agreement</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button><hr>
+                <p>Have an account: <a href="/login"> Login Here</a></p>
+              </form>
+              
+          </div>
+       
+        <div class="col">
+          </div>
+        </div>
+      </div>
+      <script>
+        function togglePasswordVisibility() {
+          var passwordInput = document.getElementById("exampleInputPassword1");
+          var confirmPasswordInput = document.getElementById("exampleInputPasswordConfirmation");
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            confirmPasswordInput.type = "text";
+          } else {
+            passwordInput.type = "password";
+            confirmPasswordInput.type = "password";
+          }
+        }
+      </script>
+      <script>
+        document.getElementById('phone').addEventListener('input', function (e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2] ? '(' + x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+        </script>
+        
+        
+      
+</body>
+<%- include('partials/footer')%>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- Image Sources:
+Bruzek, V. (2021). [Untitled online image of room]. Unsplash. https://unsplash.com/photos/white-bed-linen-with-throw-pillows-Yrxr3bsPdS0
+Chaparro, E. [Untitled online image of balcony.] Unsplash. https://unsplash.com/photos/two-wicker-chair-near-fence-5Zznjje88bo
+Gold, D. (2017). Communal Coworking Interior. Unsplash. https://unsplash.com/photos/photo-of-flat-screen-television-4HG3Ca3EzWw
+Point3D Commercial Imaging Ltd. (2021). [Untitled online image of apartment.] Unsplash. https://unsplash.com/photos/black-wooden-table-and-chairs-zOd8xdi0WVM
+Point3D Commercial Imaging Ltd. (2021). [Untitled online image of living room.] Unsplash. https://unsplash.com/photos/black-wooden-table-and-chairs-oR1M4Bl1PUU
+Rangel, A. (2022). [Untitled online image of two queen beds]. Unsplash. https://unsplash.com/photos/a-bedroom-with-a-large-bed-and-a-fan-QAzk_ceFf-w
+Wu, A. V. (2020). [Untitled online image of a bedroom]. Unsplash. https://unsplash.com/photos/white-bed-linen-with-white-table-lamp-fupf3-xAUqw
+Zakaria, F. (2020). [Untitled online image of a queen bed]. Unsplash. https://unsplash.com/photos/black-sconce-beside-white-bed-2QTsCoQnoag
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/booking.css">
+    <link rel="icon" type="/image/x-icon" href="./images/MBL_icon.png">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Booking</title>
+    <script type = "text/javascript">
+        /** Javascript functions for hovering room images */
+        function setNewDoubleFullImage() {
+            document.getElementById("img-doublefull").src ="images/img-booking-doublefull2.jpg";
+        }
+        function setOldDoubleFullImage() {
+            document.getElementById("img-doublefull").src ="images/img-booking-doublefullbeds.jpg";
+        }
+        function setNewQueenImage() {
+            document.getElementById("img-queen").src ="images/img-booking-queen2.jpg";
+        }
+        function setOldQueenImage() {
+            document.getElementById("img-queen").src ="images/img-booking-queen.jpg";
+        }
+        function setNewDoubleQueenImage() {
+            document.getElementById("img-doublequeen").src ="images/img-booking-doublequeen2.jpg";
+        }
+        function setOldDoubleQueenImage() {
+            document.getElementById("img-doublequeen").src ="images/img-booking-doublequeenbeds.jpg";
+        }
+        function setNewKingImage() {
+            document.getElementById("img-king").src ="images/img-booking-king2.jpg";
+        }
+        function setOldKingImage() {
+            document.getElementById("img-king").src ="images/img-booking-king.jpg";
+        }
+    </script>
+</head>
+    <%- include('partials/navbar') %>
+<body>
+    <div class="container" id="booking-container">
+        <div class="row">
+            <h2 class="text-center">Book Your Stay</h2>
+        </div>
+        <!-- Room reservation/booking form -->
+        <form action="/create-booking" method="POST" id="bookingForm"> 
+            <div class="row justify-content-center">
+                <div class="col-sm-auto">
+                    <a href="#"><img src="images/calendar.png" height="30px"/></a>
+                    <label for="checkIn" class="form-label">Check-In</label>
+                    <input type="date" class="form-control" id="checkIn" name="checkinDate" placeholder="Check-In Date">
+                </div>
+                <div class="col-sm-auto">
+                    <a href="#"><img src="images/calendar.png" height="30px"/></a>
+                    <label for="checkOut" class="form-label">Check-Out</label>
+                    <input type="date" class="form-control" id="checkOut" name ="checkoutDate" placeholder="Check-Out Date">
+                </div>
+                <div class="col-sm-auto">
+                    <a href="#"><img src="images/room.png" height="30px"/></a>
+                    <label for="numberOfGuests" class="form-label">Room Size</label>
+                    <div class="dropdown">
+                        <select class="form-control" id="roomSize" name="roomSize" required>
+                            <option value="">Select Room Size</option>
+                            <option value="double full beds">Double Full Beds</option>
+                            <option value="queen">Queen</option>
+                            <option value="double queen beds">Double Queen Beds</option>
+                            <option value="king">King</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-auto"> 
+                    <a href="#"><img src="images/guest.png" height="30px"/></a>                          
+                    <label for="roomSize" class="form-label">Number of Guests</label>
+                    <div class="dropdown">
+                        <select class="form-control" id="numGuests" name="numGuests" required>
+                            <option value="">Guests</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-auto"> 
+                    <div class="search-button">
+                        <button type="submit" class="btn btn-primary">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <h1 class="text-roomoptions">Room Options</h1>
+    <div class="container" id="room-container">
+        <div class="row mb-3">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a class="image"><img id="img-doublefull" src ="images/img-booking-doublefullbeds.jpg" onmouseover="setNewDoubleFullImage()" onmouseout="setOldDoubleFullImage()" width="500" height="350" alt="Double Full Beds"></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col">
+                        <h2>Double Full Beds</h2>
+                    </div>
+                    <div class="col">
+                        <h4>Price:<br>1-2 Guests $120.75 (per night)<br>3-5 Guests $157.50 (per night)</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                </div>
+                <div class="row">
+                    <h4>Room Details:</h4><br /><hr>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>Two double beds</li>
+                            <li>Max guest capacity: 5</li>
+                            <li>Sleeper sofa</li>
+                            <li>Desk</li>
+                            <li>In-room safe</li>
+                            <li>Coffee machine</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Microwave</li>
+                            <li>Mini-refrigerator</li>
+                            <li>Free hot breakfast</li>
+                            <li>Free wi-fi</li>
+                            <li>Television</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Iron</li>
+                            <li>Hair dryer</li>
+                            <li>Shower/bathtub combo</li>
+                            <li>Alarm clock</li>
+                            <li>Telephone</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a class="image"><img id="img-queen" src="images/img-booking-queen.jpg" onmouseover="setNewQueenImage()" onmouseout="setOldQueenImage()" width="500" height="350" alt="Queen"></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col">
+                        <h2>Queen</h2>                        
+                    </div>
+                    <div class="col">
+                        <h4>Price:<br>1-2 Guests $120.75 (per night)<br>3-5 Guests $157.50 (per night)</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                </div>                
+                <div class="row">
+                    <h4>Room Details:</h4><br /><hr>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>One queen bed</li>
+                            <li>Max guest capacity: 5</li>
+                            <li>Sleeper sofa</li>
+                            <li>Desk</li>
+                            <li>In-room safe</li>
+                            <li>Coffee machine</li>
+                        </ul>                        
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Microwave</li>
+                            <li>Mini-refrigerator</li>
+                            <li>Free hot breakfast</li>
+                            <li>Free wi-fi</li>
+                            <li>Television</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Iron</li>
+                            <li>Hair dryer</li>
+                            <li>Shower/bathtub combo</li>
+                            <li>Alarm clock</li>
+                            <li>Telephone</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a class="image"><img id="img-doublequeen" src="images/img-booking-doublequeenbeds.jpg" onmouseover="setNewDoubleQueenImage()" onmouseout="setOldDoubleQueenImage()" width="500" height="350" alt="Double Queen Beds"></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col">
+                        <h2>Double Queen Beds</h2>                        
+                    </div>
+                    <div class="col">
+                        <h4>Price:<br>1-2 Guests $120.75 (per night)<br>3-5 Guests $157.50 (per night)</h4>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <br />
+                </div>
+                <div class="row">
+                    <h4>Room Details:</h4><br /><hr />
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>Two queen beds</li>
+                            <li>Max guest capacity: 5</li>
+                            <li>Sofa</li>
+                            <li>Desk</li>
+                            <li>In-room safe</li>
+                            <li>Coffee machine</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Microwave</li>
+                            <li>Mini-refrigerator</li>
+                            <li>Free hot breakfast</li>
+                            <li>Free wi-fi</li>
+                            <li>Television</li>
+                            <li>Iron</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Hair dryer</li>
+                            <li>Alarm clock</li>
+                            <li>Handicap Accessible</li>
+                            <li>Rooms with handicap accessible shower available upon request</li>
+                        </ul>
+                    </div>
+                </div>           
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a class="image"><img id="img-king" src="images/img-booking-king.jpg" onmouseover="setNewKingImage()" onmouseout="setOldKingImage()" width="500" height="350" alt="King"></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col">
+                       <h2>King</h2> 
+                    </div>
+                    <div class="col">
+                        <h4>Price:<br>1-2 Guests $120.75 (per night)<br>3-5 Guests $157.50 (per night)</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                </div>
+                <div class="row">
+                    <h4>Room Details:</h4><br /><hr />
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>One king bed</li>
+                            <li>Max guest capacity: 5</li>
+                            <li>Ocean view</li>
+                            <li>Sleeper sofa</li>
+                            <li>Desk</li>
+                            <li>In-room safe</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Coffee machine</li>
+                            <li>Microwave</li>
+                            <li>Mini-refrigerator</li>
+                            <li>Free hot breakfast</li>
+                            <li>Free wi-fi</li>
+                            <li>Television</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>Iron</li>
+                            <li>Hair dryer</li>
+                            <li>Shower/bathtub combo</li>
+                            <li>Alarm clock</li>
+                            <li>Telephone</li>
+                        </ul>
+                    </div>        
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkIn').min = today;
+            
+            document.getElementById('checkIn').addEventListener('change', function() {
+                let checkInDate = new Date(this.value);
+                checkInDate.setDate(checkInDate.getDate() + 1);
+                document.getElementById('checkOut').min = checkInDate.toISOString().split('T')[0];
+            });
+        });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+<%- include('partials/footer')%> 
+</html>

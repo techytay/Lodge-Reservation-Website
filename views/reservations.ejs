@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="icon" type="/image/x-icon" href="./images/MBL_icon.png">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<%- include('partials/navbar') %>
+
+<div class="container py-5 text-center">
+    <h1 class="display-5 fw-bold">My Reservations</h1>
+    <p class="text-emailreservationid">Search Lodging History by your Email Address, or Reservation ID</p>
+    <!-- Search Form -->
+    <form action="/search" method="get" class="row g-3 justify-content-center">
+        <div class="col-auto">
+            <input type="text" class="form-control" name="email" placeholder="Email Address">
+        </div>
+        <div class="col-auto">
+            <input type="text" class="form-control" name="reservationsid" placeholder="Reservation ID">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+    </form>
+
+    <% if (typeof reservations !== 'undefined' && reservations.length > 0) { %>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Check-in Date</th>
+                        <th>Check-out Date</th>
+                        <th>Customer Name</th>
+                        <th>Room Size</th>
+                        <th>Number of Guests</th>
+                        <!-- <th>Price Per Night</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% reservations.forEach(function(reservation) { %>
+                        <tr>
+                            <td><%= reservation['Reservation ID'] %></td>
+                            <td><%= new Date(reservation.Checkindate).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) %></td>
+                            <td><%= new Date(reservation.Checkoutdate).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) %></td>
+                            <td><%= reservation['Customer Name'] %></td>
+                            <td><%= reservation.Roomsize %></td> 
+                            <td><%= reservation['Guest Capacity'] %></td>
+                            <!-- <td>$<%= Number(reservation['Price Per Night']) ? Number(reservation['Price Per Night']).toFixed(2) : 'N/A' %></td> -->
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    <% } else { %>
+        <p>No reservations found.</p>
+    <% } %>
+</div>
+
+<script>
+    function submitReservation(reservationsid) {
+        $.ajax({
+            url: '/submit-reservation',
+            method: 'POST',
+            data: { reservationsid: reservationsid },
+            success: function(response) {
+                alert('Reservation submitted successfully.');
+                location.reload();
+            },
+            error: function() {
+                alert('Error submitting reservation.');
+            }
+        });
+    }
+    
+    function cancelReservation() {
+        window.location.href = '/booking'; 
+    }
+ </script>
+</body>
+
+</html>

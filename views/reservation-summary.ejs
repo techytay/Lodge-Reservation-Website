@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="icon" type="/image/x-icon" href="./images/MBL_icon.png">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <title>Thank You</title>
+</head>
+<%- include('partials/navbar') %>
+<body>
+
+
+<div class="container">
+    <h1><br>Reservation Summary</h1><hr>
+    <p><strong>Room Size:</strong> <%= bookingDetails.roomSize %></p>
+    <p><strong>Number of Guests:</strong> <%= bookingDetails.numGuests %></p>
+    <p><strong>Check-in Date:</strong> <%= bookingDetails.checkinDate %></p>
+    <p><strong>Check-out Date:</strong> <%= bookingDetails.checkoutDate %></p>
+    <p><strong>Price Per Night:</strong> $<%= bookingDetails.pricePerNight.toFixed(2) %></p>
+    <p><strong>Total Price:</strong> $<%= bookingDetails.totalPrice.toFixed(2) %></p>
+
+    <!-- Submit Reservation Button -->
+    <form action="/confirm-reservation" method="POST">
+       <input type="hidden" name="reservationId" value="<%= bookingDetails.reservationId %>">
+        <button type="submit" class="btn btn-success">Confirm Reservation</button>
+    </form><br>
+
+    <form action="/cancel-reservation" method="POST">
+        <input type="hidden" name="reservationId" value="<%= bookingDetails.reservationId %>">
+        <button type="submit" class="btn btn-danger">Cancel</button>
+    </form>
+</div>
+</body>
+</html>

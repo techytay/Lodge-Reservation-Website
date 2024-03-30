@@ -1,0 +1,70 @@
+body{
+   background-color: #b9d7ea;
+}
+
+.formBox {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    border: 1px solid #1a3263;
+    padding: 30px;
+  }
+.mainBox{
+    margin-top: 3%;
+    margin-bottom: 12%;
+      
+}
+
+.registerMainBox{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.registerBox {
+    background-color: whitesmoke;
+    border-radius: 5%;
+    border: 1px solid #1a3263;
+    padding: 35px;
+  }
+
+  .textLogin{
+    margin-top: 3px;
+    margin-bottom: 20px;
+    font-size: medium;
+    color:#1a3263 ;
+  }
+
+  .textRegister{
+    font-size: large;
+    color:#1a3263 ;
+  }
+
+  .text-optional{
+    font-size: small;
+  }
+
+  h2{
+    text-align: center;
+   
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    border:3px solid black;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color:white;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }

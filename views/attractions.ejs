@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moffat Chief Team 1 Attractions</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/attractions.css">
+    <link rel="icon" type="/image/x-icon" href="./images/MBL_icon.png">
+    <!-- <script src="/js/jquery.js"></script> -->
+    <script src="/js/bootstrap.min.js"></script>
+    <title>Attractions</title>
+    <%- include('partials/navbar') %>
+    <script>
+      // Updated function to flip images with transition
+      function flipImage(imageId, newSrc, originalSrc) {
+          var image = document.getElementById(imageId);
+          // Check if the image is already flipped
+          if (image.classList.contains('flipped')) {
+              // If flipped, change back to original source and remove flipped class
+              image.src = originalSrc;
+              image.classList.remove('flipped');
+          } else {
+              // If not flipped, change to new source and add flipped class
+              image.src = newSrc;
+              image.classList.add('flipped');
+          }
+      }
+  
+      document.addEventListener("DOMContentLoaded", function() {
+          // Add the 'img-transition' class to each image for transition effect
+          document.querySelectorAll('.card-img-top').forEach(img => img.classList.add('img-transition'));
+  
+          // Event listeners for each image
+          document.getElementById('hikingImage').addEventListener('click', function() { flipImage('hikingImage', './images/hiking_back.jpg', './images/hiking.jpg'); });
+          document.getElementById('kayakImage').addEventListener('click', function() { flipImage('kayakImage', './images/kayaking_back.jpg', './images/kayak.jpg'); });
+          document.getElementById('whaleWatchingImage').addEventListener('click', function() { flipImage('whaleWatchingImage', './images/WhaleWatching_back.jpg', './images/WhaleWatching.jpg'); });
+          document.getElementById('scubaImage').addEventListener('click', function() { flipImage('scubaImage', './images/Scuba_back.jpg', './images/Scuba.jpg'); });
+      });
+  </script>
+  
+    </script>
+</head>
+<body>
+    <h1 class="text-attraction">Plan Your Trip Based On Popular Attractions</h1>
+    <div class="container">
+        <div class="hiking" style="width: 60rem;">
+            <a class="image"><img id="hikingImage" src="./images/hiking.jpg" class="card-img-top" alt="hiking"></a>
+            <div class="hiking-body">
+                <h3 class="hiking-title">Hiking Tours</h3>
+                <p class="hiking-text">Embark on guided tours designed to rejuvenate your spirit as you hike, connect, and recharge in nature. Our seasoned guides will take you through rugged trails to witness awe-inspiring mountain views on this guided hiking tour. Create lasting memories while you conquer peaks with fellow adventurers.
+                </p>
+                <a href="booking" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="kayaking" style="width: 60rem;">
+            <a class="image"><img id="kayakImage" src="./images/kayak.jpg" class="card-img-top" alt="kayaking"></a>
+            <div class="kayaking-body">
+                <h3 class="kayaking-title">Kayaking</h3>
+                <p class="kayaking-text">Experience the exhilaration of a guided kayaking tour and discover the wonders of nature from a fresh perspective. Immerse yourself in the breathtaking natural beauty of picturesque lakes, winding rivers, and coastal areas. Enjoy the thrill of kayaking while breathing in the refreshing air and witness local wildlife in their natural habitat. Don't miss out on this opportunity to learn about nature in an exciting and unforgettable way about nature from a unique perspective.
+                </p>
+                <a href="booking" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="Whale-Watching" style="width: 60rem;">
+            <a class="image"><img id="whaleWatchingImage" src="./images/WhaleWatching.jpg" class="card-img-top" alt="Whale-Watching"></a>
+            <div class="Whale-Watching-body">
+                <h3 class="Whale-Watching-title">Whale Watching</h3>
+                <p class="Whale-Watching-text">Whale watching is an exhilarating experience. See these majestic marine mammals in their natural habitat guided by experts. This eco-tourism activity promotes conservation awareness and appreciation for marine ecosystems. It's an unforgettable experience that fosters a deeper connection with the ocean's gentle giants.
+                </p>
+                <a href="booking" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="Scuba" style="width: 60rem;">
+            <a class="image"><img id="scubaImage" src="./images/Scuba.jpg" class="card-img-top" alt="Scuba"></a>
+            <div class="Scuba-body">
+                <h3 class="Scuba-title">Scuba Diving</h3>
+                <p class="Scuba-text">Looking for a thrilling adventure? Discover the mesmerizing world beneath the waves with scuba diving! Our expert-guided excursions offer a safe and fun way to explore the crystal-clear waters, vibrant coral gardens, and captivating marine creatures of the bay. Whether you're an experienced diver or new to the sport, our friendly and knowledgeable guides will ensure a rewarding and unforgettable experience. Dive in today and discover the magic of the underwater world!
+                </p>
+                <a href="booking" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

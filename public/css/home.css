@@ -1,0 +1,45 @@
+
+.container {
+    font-family: Arial, Helvetica, sans-serif, serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#d6e7f1;
+    padding: 45px 50px;
+    margin: 50px 300px;
+    border-radius: 5px;
+
+}
+  
+.text {
+    flex: 0 0 25%;
+    font-size: x-large;
+    font-weight: bold;
+    color: #1a3263;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.banner {
+    flex:00 75%;
+    padding: 25px 30px;
+}
+ 
+.banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 10px 10px 5px grey; 
+}
+
+h3 {
+    padding-top: 20px;
+}
+
+footer > p {
+    margin-bottom: 5px;
+    color: white;   
+
+}

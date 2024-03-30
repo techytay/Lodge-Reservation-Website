@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" type="image/x-icon" href="./images/MBL_icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<%- include('partials/navbar') %>
+<body>
+  <div class="container mainBox">
+    <div class="row align-items-center">
+        <div class="col">
+        </div>
+        <div class="col formBox">
+            <h2>Login</h2><hr>
+            <% if(typeof successMessages != "undefined" && successMessages.length > 0){ %>
+                <% successMessages.forEach(function(message) { %>
+                    <div class="alert alert-success"><%= message %></div>
+                <% }); %>
+            <% } %>
+            <div class="errMessage"> 
+                <% if(typeof message != "undefined" && message){ %>
+                    <p class="alert alert-danger p-1 mt-4"><%= message %></p>
+                <% } %> 
+            </div>
+            <form action="/auth/login" method="post">
+                <div class="mb-3">
+                    <div><p class="textLogin"> Login to your account </p></div>
+                    <label for="exampleInputEmail1" class="form-label" style="font-weight: bolder; font-size: large;">
+                    Email address
+                    <a href="#" title="Please enter your Email Address here. Thanks!"><img src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="20px"/></a>
+                    </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+                    <div class="errMessage"> <% if( typeof emailMessage != "undefined" && emailMessage){ %>
+                        <p class="alert alert-danger p-1 mt-4"><%= emailMessage %></p>
+                    <% } %> </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label" style="font-weight: bolder; font-size: large;">
+                    Password
+                    <a href="#" title="Don't mistype, password is case sensitive.😉Thanks!"><img src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="20px"/></a>
+                    </label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                    <div class="errMessage"> <% if( typeof passwordMessage != "undefined" && passwordMessage){ %>
+                        <p class="alert alert-danger p-1 mt-5"><%= passwordMessage %></p>
+                    <% } %> </div>
+                </div>
+                <div class="mb-3">
+                    <a href="/forgot-password" class="text-muted">Forgot your password?</a>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Remember">
+                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <hr>
+                <div><p class="textRegister"> Don't have an account? <a href="/register">Register Here</a></p></div>
+            </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+  </div>
+</body>
+<%- include('partials/footer') %>
+</html>

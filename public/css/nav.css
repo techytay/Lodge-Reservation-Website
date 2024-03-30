@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, Helvetica, sans-serif, serif;
+    padding-top: 100px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#navbarNavAltMarkup{
+    margin: top 20px;
+    padding-left: 20px;
+}
+
+.navbar-brand {
+    padding-left: 30px;
+}
+
+.nav-link{
+    margin-top: 50px;
+    padding-right: 20px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.welcome-message {
+    color: #ffffff; 
+    padding-left: 150px;
+    font-size: larger; 
+    font-weight: bold; 
+}
+
+.navbar{
+    background-color: #769fcd;
+    border-radius: 2px;
+    box-shadow: 5px 5px 3px grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar-text{
+    color: #fef1e6;
+    float:right;
+}
+.copy{
+    text-align: center;
+}
+.logo{
+    padding-top: 1rem;
+    padding-left: 5%;
+    background-color: #769fcd;
+}
+.navbar-nav{
+    padding-left: 10%;
+}
+.nav-item{
+    padding-left: 4rem;
+}
+.nav-link:hover{
+    background-color: #90aacb;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.nav-link.px-2.text-body-secondary:hover {
+    background-color: #1a3263;
+    color: whitesmoke;
+}
+
+
+footer{
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+    background-color: #769fcd;
+}
+.userName{
+    justify-content: right;
+    padding-right: 3%;
+    text-transform: capitalize;
+}
+
+.sumBox{
+    background-color: #F9D5A7;
+    border: 2px solid #1a3263;
+    text-align: center;
+}
+.sumTitle{
+ padding-top: 2%;   
+ color: #1a3263;
+ text-align: center;
+ font-weight: 700;
+}
+.summaryTitle{
+    color: #1a3263;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-left: 3%;
+    padding-top: 5%;
+}
+.sumContain{
+    height: auto;   
+}
+
+.sumButton{
+    margin: 50% auto;
+    display: inline-flex;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    background-color: #1a3263;
+    color: whitesmoke;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.sumButton a{
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.btn-primary {
+    width: auto;
+    background-color: #1A3263;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.sumInfo button{
+    font-size: 1em;
+}
+.sumInfo p{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #1A3263;
+}
+.rows{
+    margin: 2%;
+}
+
+.text-emailreservationid{
+    background-color: #769FCD;
+    box-shadow: 5px 5px 2px grey;
+    padding: 5px 5px;
+    margin: 20px 200px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+/* Footer and Navigation Links Styling */
+.container-footer {
+    background-color: white;
+    padding-top: 20px;
+    border-top: 2px solid white; 
+}
+
+.nav-item .nav-link {
+    color: #495057; 
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item .nav-link:hover, .nav-item .nav-link:focus {
+    color: #0056b3; 
+    text-decoration: none; 
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1A3263;
+    color: #ffffff;
+    padding: 1px 0;
+    text-align: center;
+}
+
+.text-footer p {
+    margin-bottom: 0.2rem; /* Reduces space between paragraphs for a compact look */
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-bottom: 15px;
+    }
+
+    .nav-item .nav-link {
+        text-align: center; 
+    }
+}
