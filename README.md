@@ -4,7 +4,7 @@
 * HTML
 * CSS
 * MySQL
-* Node.js
+* Javascript
 ### Contributors:
 * Taylor Niemann
 * Ricardo Orlando
